@@ -136,8 +136,8 @@ vendor/etc/vintf/manifest/manifest_audio_qti_services.xml
 vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
 vendor/etc/vintf/manifest/qasr_vintf.xml
 vendor/lib64/hw/audio.primary.default.so
-vendor/lib64/hw/libaudiocorehal.default.so;DISABLE_DEPS
-vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_DEPS
+vendor/lib64/hw/libaudiocorehal.default.so
+vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_CHECKELF
 vendor/lib64/hw/libaudioeffecthal.qti.so
 vendor/lib64/libPeripheralStateUtils.so
 vendor/lib64/libVoiceSdk.so
@@ -153,7 +153,6 @@ vendor/lib64/libats.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libaudioplatformconverter.qti.so
-vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
 vendor/lib64/libav_miwnsencoder.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
@@ -189,6 +188,12 @@ vendor/lib64/libxlog.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qasr-V2-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
+
+# Audio - old AIDL dependencies
+vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so;FIX_SONAME
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so:vendor/lib64/libaudio_aidl_conversion_common_ndk_prebuilt.so;FIX_SONAME
+vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
+vendor/lib64/libbluetooth_audio_session_aidl.so:vendor/lib64/libbluetooth_audio_session_aidl_prebuilt.so;FIX_SONAME
 
 # Audio configs
 odm/etc/audio/sku_tuna/adsp_sleep_monitor.conf
