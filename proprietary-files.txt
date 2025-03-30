@@ -72,10 +72,9 @@ vendor/etc/acdbdata/nn_vad_models/fai__3.0.0_0.0__eai_4.6_enpuv5.pmd
 
 # ADSP
 vendor/bin/adsprpcd
-vendor/bin/audioadsprpcd
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
-vendor/etc/init/vendor.qti.audio-adsprpc-service.rc
 vendor/lib64/libadsp_default_listener.so
+vendor/lib64/libadsprpc.so
 vendor/lib64/libvmmem.so
 
 # ADSP modules
@@ -127,9 +126,7 @@ odm/lib64/libcrussp.so;DISABLE_CHECKELF
 odm/lib64/libsiaalgocal.so;DISABLE_CHECKELF
 odm/lib64/libtfacal.so;DISABLE_CHECKELF
 odm/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so
-vendor/bin/hw/audiohalservice.qti
 vendor/etc/audio_cloud_control_white_list.xml
-vendor/etc/init/audiohalservice_qti.rc
 vendor/etc/models/acd/environment.eai
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
@@ -138,24 +135,15 @@ vendor/etc/vintf/manifest/audioeffectservice_qti.xml
 vendor/etc/vintf/manifest/manifest_audio_qti_services.xml
 vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml
 vendor/etc/vintf/manifest/qasr_vintf.xml
-vendor/etc/vintf/manifest/soundtrigger.qti.xml
-vendor/lib64/hw/audio.bluetooth.default.so;DISABLE_DEPS
 vendor/lib64/hw/audio.primary.default.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/hw/libaudiocorehal.default.so;DISABLE_DEPS
 vendor/lib64/hw/libaudiocorehal.qti.so;DISABLE_DEPS
 vendor/lib64/hw/libaudioeffecthal.qti.so
-vendor/lib64/hw/libsoundtriggerhal.qti.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libPeripheralStateUtils.so
 vendor/lib64/libVoiceSdk.so
-vendor/lib64/lib_bt_aptx.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/lib_bt_ble.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/lib_bt_bundle.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/lib_bt_lhdc.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/lib_bt_mihc.so;MAKE_COPY_RULE_ONLY
+vendor/lib64/lib_bt_lhdc.so
+vendor/lib64/lib_bt_mihc.so
 vendor/lib64/libadm.so
-vendor/lib64/libadsprpc.so
 vendor/lib64/libar-acdb.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libar-gpr.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libar-gsl.so;MAKE_COPY_RULE_ONLY
@@ -163,27 +151,20 @@ vendor/lib64/libar-pal.so;DISABLE_CHECKELF
 vendor/lib64/libarmemlog.so;DISABLE_CHECKELF
 vendor/lib64/libats.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libaudiochargerlistener.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libaudioplatformconverter.qti.so
 vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
 vendor/lib64/libav_miwnsencoder.so
-vendor/lib64/libbatterylistener.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
 vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libcustomva_intf.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libeai_fixed.so
 vendor/lib64/libeai_float.so
 vendor/lib64/libeffects.so
-vendor/lib64/libfmpal.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libhfp_pal.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libhotword_intf.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/liblistensoundmodelaidl.so
-vendor/lib64/liblx-ar_util.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/liblx-osal.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libmcs.so;DISABLE_CHECKELF
 vendor/lib64/libmidatabase.so
@@ -195,18 +176,14 @@ vendor/lib64/libmisoundfx_aidl_ext.so;SYMLINK=vendor/lib64/soundfx/libmisoundfx_
 vendor/lib64/libmisoundsa.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libpalclient.so
-vendor/lib64/libpaleventnotifier.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libpalipcservice.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libqasr.so
 vendor/lib64/libqtigefar.so
-vendor/lib64/libsndcardparser.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libswspatializeraidl_ext.so;DISABLE_DEPS
 vendor/lib64/libtensorflowlite_c.so
 vendor/lib64/libtiantongpal.so
 vendor/lib64/libvui_dmgr.so
 vendor/lib64/libvui_dmgr_client.so
-vendor/lib64/libvui_intf.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libwindns.so
 vendor/lib64/libxlog.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
@@ -256,11 +233,6 @@ odm/firmware/sipa.bin
 
 # Audio graph manager
 vendor/lib64/libagm.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libagm_compress_plugin.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libagm_mixer_plugin.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libagm_pcm_plugin.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libagmclient.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/libagmipcservice.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libmisight.so
 
 # Audio soundfx
@@ -321,9 +293,6 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@aidl-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so
 vendor/lib64/hw/vendor.qti.hardware.fm-impl.so
-vendor/lib64/lib_bt_aptx.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/lib_bt_ble.so;MAKE_COPY_RULE_ONLY
-vendor/lib64/lib_bt_bundle.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libbluetooth_audio_session_aidl_qti.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
