@@ -94,3 +94,6 @@ PRODUCT_PACKAGES += \
     firmware_wlanmdsp.otaupdate_symlink \
     firmware_wlan_mac.bin_symlink \
     firmware_WCNSS_qcom_cfg.ini_symlink
+
+# Vendor
+$(call inherit-product, vendor/xiaomi/onyx/onyx-vendor.mk)
