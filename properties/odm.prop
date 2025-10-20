@@ -1,3 +1,6 @@
+# Order
+ro.product.property_source_order=odm,vendor,product,system_ext,system
+
 # Audio
 audio.spatializer.pose_predictor_type=2
 audio.spatializer.prediction_duration_ms=50
@@ -296,3 +299,6 @@ sys.rhythmic_mode_default_level=50
 persist.vendor.battery.erp=true
 persist.vendor.battery.health.optimise=true
 persist.vendor.battery.health=true
+
+# SKU
+import /odm/etc/odm_${ro.boot.hwc}.prop
