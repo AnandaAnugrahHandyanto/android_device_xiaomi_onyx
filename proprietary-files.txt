@@ -232,6 +232,7 @@ odm/etc/backend_conf.xml
 odm/etc/backend_conf_sia.xml
 odm/etc/sixth_wrapper_cfg.xml
 odm/etc/usecaseKvManager.xml
+vendor/etc/Hapticsconfig.xml
 vendor/etc/a2dp_audio_policy_configuration.xml
 vendor/etc/audio/audio_module_config_primary.xml
 vendor/etc/audio/sku_kera/audio_effects.conf
