@@ -217,13 +217,11 @@ vendor/lib64/vendor.qti.hardware.qasr-V2-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
 
 # Audio configs
-odm/etc/audio/audio_module_config_primary.xml
 odm/etc/audio/sku_tuna/adsp_sleep_monitor.conf
 odm/etc/audio/sku_tuna/mixer_paths_overlay_dynamic.xml
 odm/etc/audio/sku_tuna/mixer_paths_overlay_static.xml
 odm/etc/audio/sku_tuna/mixer_paths_tuna_mtp.xml
 odm/etc/audio/sku_tuna/resourcemanager_tuna_mtp.xml
-odm/etc/audio/sku_tuna_qssi/audio_policy_configuration.xml
 odm/etc/audio_policy_engine_configuration_mi.xml
 odm/etc/audio_policy_engine_default_stream_volumes_mi.xml
 odm/etc/audio_policy_engine_product_strategies_mi.xml
@@ -234,17 +232,13 @@ odm/etc/sixth_wrapper_cfg.xml
 odm/etc/usecaseKvManager.xml
 vendor/etc/Hapticsconfig.xml
 vendor/etc/a2dp_audio_policy_configuration.xml
-vendor/etc/audio/audio_module_config_primary.xml
 vendor/etc/audio/sku_tuna/audio_effects.conf
 vendor/etc/audio/sku_tuna/audio_effects.xml
 vendor/etc/audio/sku_tuna/audio_effects_config.xml
 vendor/etc/audio/sku_tuna/audio_effects_config_stub.xml
-vendor/etc/audio/sku_tuna/audio_policy_configuration.xml
 vendor/etc/audio/sku_tuna/quasar_config.xml
-vendor/etc/audio/sku_tuna_qssi/audio_policy_configuration.xml
 vendor/etc/audio/vendor_audio_interfaces.xml
 vendor/etc/audio_diag.cfg
-vendor/etc/audio_policy_configuration.xml
 vendor/etc/audio_policy_engine_configuration.xml
 vendor/etc/audio_policy_engine_default_stream_volumes.xml
 vendor/etc/audio_policy_engine_product_strategies.xml
