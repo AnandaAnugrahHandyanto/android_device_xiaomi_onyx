@@ -172,8 +172,11 @@ PRODUCT_PACKAGES += \
     FrameworkOverlayOnyx \
     FrameworkOverlayOnyxGL \
     SettingsOverlayOnyx \
+    SettingsProviderOverlayOnyx \
+    SettingsProviderOverlayOnyxCN \
     SecureElementOverlayOnyx \
-    WifiOverlayOnyx
+    WifiOverlayOnyx \
+    WifiOverlayOnyxCN
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
