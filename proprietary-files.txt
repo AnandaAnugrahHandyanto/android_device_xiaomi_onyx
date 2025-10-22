@@ -2798,10 +2798,12 @@ system_ext/framework/com.android.hotwordenrollment.common.util.jar
 odm/lib64/hw/consumerir.qcom.so
 
 # Kernel
+vendor/bin/init.qti.kernel.sh
 vendor/bin/init.qti.write.sh
 vendor/bin/system_dlkm_modprobe.sh
 vendor/bin/vendor_modprobe.sh
 vendor/etc/init/hw/init.qti.kernel.rc
+vendor/etc/init/hw/init.qti.kernel.target.rc
 
 # Keymint
 odm/bin/hw/android.hardware.authsecret-service.nxp-qti
@@ -2840,6 +2842,7 @@ vendor/lib64/libspcom.so
 vendor/bin/hw/android.hardware.media.c2-mi-service
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
+vendor/bin/init.qti.media.sh
 vendor/etc/init/android.hardware.media.c2-mi-service.rc
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
@@ -3290,43 +3293,21 @@ vendor/lib64/vendor.qti.hardware.qxr-V2-ndk.so
 # Rootdir
 odm/etc/ueventd.rc
 vendor/bin/init.class_main.sh
-vendor/bin/init.crda.sh
-vendor/bin/init.kernel.extra_free_kbytes.sh
 vendor/bin/init.kernel.init_boot-memory.sh
 vendor/bin/init.kernel.post_boot-memory.sh
 vendor/bin/init.kernel.post_boot-tuna.sh
-vendor/bin/init.kernel.post_boot-tuna_1_3_2_1.sh
-vendor/bin/init.kernel.post_boot-tuna_2_2_2_1.sh
-vendor/bin/init.kernel.post_boot-tuna_2_3_1_1.sh
-vendor/bin/init.kernel.post_boot-tuna_2_3_2_0.sh
 vendor/bin/init.kernel.post_boot-tuna_default_2_3_2_1.sh
 vendor/bin/init.kernel.post_boot.sh
-vendor/bin/init.mdm.sh
 vendor/bin/init.qcom.class_core.sh
-vendor/bin/init.qcom.coex.sh
 vendor/bin/init.qcom.early_boot.sh
-vendor/bin/init.qcom.efs.sync.sh
 vendor/bin/init.qcom.post_boot.sh
-vendor/bin/init.qcom.sdio.sh
 vendor/bin/init.qcom.sh
 vendor/bin/init.qcrild.sh
-vendor/bin/init.qti.kernel.debug-tuna.sh
-vendor/bin/init.qti.kernel.debug.sh
-vendor/bin/init.qti.kernel.early_debug-tuna.sh
-vendor/bin/init.qti.kernel.early_debug.sh
-vendor/bin/init.qti.kernel.sh
-vendor/bin/init.qti.keymaster.sh
-vendor/bin/init.qti.media.sh
-vendor/bin/init.qvrd.usb_mtu_set.sh
-vendor/bin/init.xrcommd.usb_mtu_set.sh
 vendor/etc/charger_fw_fstab.qti
 vendor/etc/fw_dir.ueventd.qcom.rc
 vendor/etc/init/hw/init.qcom.factory.rc
 vendor/etc/init/hw/init.qcom.rc
-vendor/etc/init/hw/init.qti.kernel.target.rc
-vendor/etc/init/hw/init.qti.ufs.rc
 vendor/etc/init/hw/init.target.rc
-vendor/etc/init/trace.debug-sun.rc
 vendor/etc/ueventd.rc
 
 # RIL
