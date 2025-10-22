@@ -125,10 +125,32 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    charger_fw_fstab.qti \
     fstab.qcom
 
 PRODUCT_PACKAGES += \
-    init.recovery.qcom.rc
+    fw_dir.ueventd.qcom.rc \
+    ueventd-odm.rc \
+    ueventd.qcom.rc
+
+PRODUCT_PACKAGES += \
+    init.qcom.factory.rc \
+    init.qcom.rc \
+    init.recovery.qcom.rc \
+    init.target.rc
+
+PRODUCT_PACKAGES += \
+    init.class_main.sh \
+    init.kernel.init_boot-memory.sh \
+    init.kernel.post_boot-memory.sh \
+    init.kernel.post_boot-tuna.sh \
+    init.kernel.post_boot-tuna_default_2_3_2_1.sh \
+    init.kernel.post_boot.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sh \
+    init.qcrild.sh
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
