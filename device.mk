@@ -45,7 +45,11 @@ PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Audio
 PRODUCT_PACKAGES += \
+    vendor.qti.hardware.pal-V1-ndk \
+    vendor.qti.hardware.agm-V1-ndk \
+    vendor.qti.hardware.paleventnotifier-V2-ndk \
     android.hardware.audio.core.sounddose-V1-ndk.vendor \
+    android.hardware.soundtrigger3-V1-ndk.vendor \
     libalsautilsv2.vendor \
     libaudio_aidl_conversion_common_ndk.vendor \
     libmediautils_vendor.vendor
