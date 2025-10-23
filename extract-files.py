@@ -140,6 +140,12 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.sensors-V3-ndk.so'
     ),
 
+    'vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service': blob_fixup()
+        .replace_needed(
+            'android.hardware.vibrator-V1-ndk_platform.so',
+            'android.hardware.vibrator-V1-ndk_prebuilt.so'
+    ),
+
     (
         'vendor/lib64/camera/components/com.qti.node.dewarp.so',
         'vendor/lib64/hw/com.qti.chi.override.so',
