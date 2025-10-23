@@ -186,7 +186,6 @@ vendor/lib64/libwindns.so
 vendor/lib64/libxlog.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qasr-V2-ndk.so
-vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
 
 # Audio - old AIDL dependencies
 vendor/lib64/android.hardware.bluetooth.audio-impl.so:vendor/lib64/android.hardware.bluetooth.audio-impl_prebuilt.so;FIX_SONAME
@@ -2799,6 +2798,12 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 vendor/lib64/libqtikeymint.so
 vendor/lib64/libspcom.so
+
+# Micharge
+vendor/bin/hw/vendor.xiaomi.hardware.micharge-service
+vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge.xml
+vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
 
 # Media
 vendor/bin/hw/android.hardware.media.c2-mi-service
