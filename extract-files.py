@@ -9,6 +9,7 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 from extract_utils.fixups_lib import (
+    lib_fixup_remove,
     lib_fixups,
     lib_fixups_user_type,
 )
@@ -18,6 +19,13 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
+    'hardware/qcom-caf/sm8750',
+    'hardware/qcom-caf/wlan',
+    'hardware/xiaomi',
+    'vendor/qcom/opensource/commonsys/display',
+    'vendor/qcom/opensource/commonsys-intf/display',
+    'vendor/qcom/opensource/dataservices',
+    'vendor/qcom/opensource/display',
 ]
 
 
@@ -27,12 +35,128 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    (
+    ): lib_fixup_remove,
+    (
+        'vendor.qti.diaghal-V1-ndk',
+        'vendor.qti.diaghal@1.0',
+        'vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk',
+        'vendor.qti.ims.uceaidlservice-V1-ndk',
+        'vendor.qti.ImsRtpService-V1-ndk',
+        'vendor.qti.qccsyshal_aidl-V1-ndk',
+        'vendor.qti.qccvndhal_aidl-V1-ndk',
+    ): lib_fixup_vendor_suffix,
 }
 
 
 blob_fixups: blob_fixups_user_type = {
-}  # fmt: skip
+    'system_ext/etc/vintf/manifest/vendor.qti.qesdsys.service.xml': blob_fixup()
+        .regex_replace(r'(?s)^.*?(?=<manifest)', ''),
 
+    'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
+        .add_needed('libgui_shim.so'),
+
+    'system_ext/lib64/libwfdnative.so': blob_fixup()
+        .add_needed('libbinder_shim.so')
+        .add_needed('libinput_shim.so')
+        .remove_needed('android.hidl.base@1.0.so'),
+
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .replace_needed(
+            'android.media.audio.common.types-V2-cpp.so',
+            'android.media.audio.common.types-V4-cpp.so',
+    ),
+
+    (
+        'odm/etc/camera/enhance_motiontuning.xml',
+        'odm/etc/camera/motiontuning.xml',
+    ): blob_fixup()
+        .regex_replace('xml=version', 'xml version'),
+
+    (
+        'odm/bin/hw/android.hardware.security.keymint-service.strongbox-nxp',
+        'odm/lib64/libjc_keymint-nxp.so',
+        'odm/lib64/libjc_keymint_transport_nxp.so',
+        'odm/lib64/libkeymint_empty-nxp.so',
+        'odm/lib64/libkeymint_empty-thales.so',
+        'vendor/bin/hw/android.hardware.security.keymint-service-qti',
+        'vendor/lib64/libqtikeymint.so',
+    ): blob_fixup()
+        .replace_needed(
+            'android.hardware.security.keymint-V3-ndk.so',
+            'android.hardware.security.keymint-V4-ndk.so'
+        )
+        .replace_needed(
+            'libcppbor_external.so',
+            'libcppbor_onyx.so'
+    ),
+
+    (
+        'odm/bin/hw/vendor.xiaomi.hw.touchfeature-service',
+        'odm/lib64/hw/displayfeature.default.so',
+        'odm/lib64/libadaptivehdr.so',
+        'odm/lib64/libcolortempmode.so',
+        'odm/lib64/libdither.so',
+        'odm/lib64/libflatmode.so',
+        'odm/lib64/libhistprocess.so',
+        'odm/lib64/libmiBrightness.so',
+        'odm/lib64/libmiSensorCtrl.so',
+        'odm/lib64/libpaperMode.so',
+        'odm/lib64/librhytheyecare.so',
+        'odm/lib64/libsdr2hdr.so',
+        'odm/lib64/libsre.so',
+        'odm/lib64/libtruetone.so',
+        'odm/lib64/libvideomode.so',
+        'vendor/lib64/hw/camera.qcom.so',
+        'vendor/lib64/libgnss.so',
+    ): blob_fixup()
+        .replace_needed(
+            'android.hardware.sensors-V2-ndk.so',
+            'android.hardware.sensors-V3-ndk.so',
+    ),
+
+    'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl': blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.common-V5-ndk.so',
+            'android.hardware.graphics.common-V6-ndk.so'
+        )
+        .replace_needed(
+            'android.hardware.sensors-V2-ndk.so',
+            'android.hardware.sensors-V3-ndk.so'
+    ),
+
+    (
+        'vendor/lib64/camera/components/com.qti.node.dewarp.so',
+        'vendor/lib64/hw/com.qti.chi.override.so',
+        'vendor/lib64/libcamximageformatutils.so',
+        'vendor/lib64/libchifeature2.so',
+        'vendor/lib64/libqvrservice.so',
+        'vendor/lib64/vendor.qti.hardware.camera.offlinecamera-service-impl.so',
+    ): blob_fixup()
+        .replace_needed(
+            'android.hardware.graphics.allocator-V1-ndk.so',
+            'android.hardware.graphics.allocator-V2-ndk.so',
+    ),
+
+    'vendor/lib64/libcameraopt.so': blob_fixup()
+        .add_needed('libprocessgroup_shim.so'),
+
+    'vendor/lib64/libqcodec2_core.so': blob_fixup()
+        .add_needed('libcodec2_shim.so')
+        .replace_needed(
+            'android.hardware.graphics.common-V5-ndk.so',
+            'android.hardware.graphics.common-V6-ndk.so'
+    ),
+
+    'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
+        .replace_needed(
+            'android.media.audio.common.types-V2-ndk.so',
+            'android.media.audio.common.types-V3-ndk.so',
+    ),
+
+    'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
+        .add_needed('libhidlbase_shim.so'),
+}  # fmt: skip
 
 module = ExtractUtilsModule(
     'onyx',
