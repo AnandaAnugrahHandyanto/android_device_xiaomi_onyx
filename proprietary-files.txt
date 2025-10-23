@@ -161,7 +161,6 @@ vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libeai_fixed.so
 vendor/lib64/libeai_float.so
-vendor/lib64/libeffects.so
 vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/liblistensoundmodelaidl.so
 vendor/lib64/liblx-osal.so;MAKE_COPY_RULE_ONLY
