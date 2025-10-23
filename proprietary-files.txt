@@ -211,10 +211,7 @@ odm/etc/sixth_wrapper_cfg.xml
 odm/etc/usecaseKvManager.xml
 vendor/etc/Hapticsconfig.xml
 vendor/etc/a2dp_audio_policy_configuration.xml
-vendor/etc/audio/sku_tuna/audio_effects.conf
-vendor/etc/audio/sku_tuna/audio_effects.xml
 vendor/etc/audio/sku_tuna/audio_effects_config.xml
-vendor/etc/audio/sku_tuna/audio_effects_config_stub.xml
 vendor/etc/audio/sku_tuna/quasar_config.xml
 vendor/etc/audio/vendor_audio_interfaces.xml
 vendor/etc/audio_diag.cfg
@@ -241,17 +238,11 @@ vendor/lib64/libagm.so;MAKE_COPY_RULE_ONLY
 vendor/lib64/libmisight.so
 
 # Audio soundfx
-vendor/lib64/soundfx/libaudiopreprocessing.so
 vendor/lib64/soundfx/libbundleaidl.so;DISABLE_DEPS
-vendor/lib64/soundfx/libbundlewrapper.so
 vendor/lib64/soundfx/libdlbvolaidl.so
-vendor/lib64/soundfx/libdownmix.so
 vendor/lib64/soundfx/libdownmixaidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libdynamicsprocessingaidl.so;DISABLE_DEPS
-vendor/lib64/soundfx/libdynproc.so
-vendor/lib64/soundfx/libeffectproxy.so
 vendor/lib64/soundfx/libhwdapaidl.so;DISABLE_DEPS
-vendor/lib64/soundfx/libldnhncr.so
 vendor/lib64/soundfx/libloudnessenhanceraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libmiwndnsprocessingaidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libozoaidl.so;DISABLE_DEPS
@@ -260,11 +251,9 @@ vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
 vendor/lib64/soundfx/libquasar.so
 vendor/lib64/soundfx/libreverbaidl.so;DISABLE_DEPS
-vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libspatializeraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libswgamedapaidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libswspatializeraidl.so;DISABLE_DEPS
-vendor/lib64/soundfx/libvisualizer.so
 vendor/lib64/soundfx/libvisualizeraidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libvolumelistener.so
 
